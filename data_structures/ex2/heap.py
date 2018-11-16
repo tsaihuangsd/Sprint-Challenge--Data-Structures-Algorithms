@@ -1,6 +1,51 @@
 def heapsort(arr):
- pass 
- 
+  # create a new heap with a storage a copy of arr; perform top-down sift down through delete()
+  new_heap = Heap()
+  new_heap.storage = arr
+  new_heap.insert(new_heap.get_max()+1)
+  new_heap.delete()
+  print(new_heap.storage)
+
+  output = []
+  def helper_function(heap=Heap()):
+    if heap.storage[1] == None:
+      output.append(heap.get_max())
+    output.append(heap.get_max())
+    if heap.storage[1] > heap.storage[2]:
+      helper_function(heap)
+
+  # current_size = new_heap.get_size - 1
+  # while current_size > 0:
+  #   current_max = new_heap.get_max()
+  #   new_heap.storage = new_heap.storage[1:-1]
+  #   new_heap.insert(current_max)
+  #   current_size -= 1
+  
+  # def helper_function(current_heap):
+  #   if current_heap.get_size() <= 1:
+  #     return 
+  #   current_max = current_heap.get_max()
+  #   current_heap.storage = current_heap.storage[1:-1]
+  #   current_heap.insert(current_max)
+  #   helper_function(current_heap)
+
+  # helper_function(new_heap)
+  # return new_heap.storage
+
+  # output = []
+  # def helper_function(current_heap):
+  #   if current_heap.
+
+  #   print(output)
+  #   output.append(new_heap.storage[0])
+  #   left_index = 1
+  #   if arr1[left_index]:
+  #     helper_function(arr1[left_index:])
+  #   right_index = 2
+  #   if arr1[right_index]:
+  #     helper_function(arr1[right_index:])
+  # helper_function(new_heap.storage)
+  # return output
 
 class Heap:
   def __init__(self):
